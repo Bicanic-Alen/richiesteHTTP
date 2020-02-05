@@ -18,19 +18,6 @@ export class FooComponent implements OnInit {
      this.loading = true;
      this.o = this.http.get('https://jsonplaceholder.typicode.com/posts/1');
      this.o.subscribe(this.getData);
-     this.loading = true;
-     this.http
-     .post('https://jsonplaceholder.typicode.com/posts',
-       JSON.stringify({
-         body: 'bar',
-         title: 'foo',
-         userId: 1
-       })
-     )
-     .subscribe(data => {
-       this.data = data;
-       this.loading = false;
-     });
 
     }
     getData = (d : Object) =>
